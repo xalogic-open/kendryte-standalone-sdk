@@ -426,6 +426,22 @@ void spi_send_data_normal_dma(dmac_channel_number_t channel_num, spi_device_num_
                               const void *tx_buff, size_t tx_len, spi_transfer_width_t spi_transfer_width);
 
 /**
+ * @brief       Spi normal send by non-dma
+ *
+ * @param[in]   spi_num         Spi bus number
+ * @param[in]   chip_select     Spi chip select
+ * @param[in]   tx_buff         Spi transmit buffer point
+ * @param[in]   tx_len          Spi transmit buffer length
+ *
+ * @return      Result
+ *     - 0      Success
+ *     - Other  Fail
+ */
+void spi_send_data_normal(spi_device_num_t spi_num,
+                          spi_chip_select_t chip_select,
+                          const uint8_t *tx_buff, size_t tx_len);
+
+/**
  * @brief       Spi normal send by dma
  *
  * @param[in]   spi_num         Spi bus number
